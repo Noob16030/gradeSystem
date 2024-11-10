@@ -86,7 +86,7 @@ public class Main {
         while (maxBlankInputs < 3) {
             System.out.println("Do you wanna see grades of subject for some student?(name for continue/n for exit)");
             helpName = scannerStr.nextLine().toLowerCase();
-            if (helpName.toLowerCase().equals("n")){
+            if (helpName.equals("n")){
                 break;
             } else if (helpName.isEmpty()) {
                 maxBlankInputs++;
@@ -113,11 +113,9 @@ public class Main {
     // Pomocna funkcia pre vypocet priemernej znamky
     public static Double returnAverageGrade (int[] arrayOfGrades){
         int all = 0;
-        String rtrn;
         for (int grade: arrayOfGrades){
             all += grade;
         }
-        rtrn = String.format("%.2f", (Double.valueOf(all) / Double.valueOf(arrayOfGrades.length)));
         return (Double.valueOf(all) / Double.valueOf(arrayOfGrades.length));
     }
 
